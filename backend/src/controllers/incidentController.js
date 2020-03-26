@@ -14,6 +14,7 @@ module.exports = {
             .select(['incidents.*', 'ongs.name', 'ongs.email', 'ongs.whatsapp', 'ongs.city', 'ongs.uf']);
 
         response.header('X-Total-Count', count['count(*)']);
+        response.header('X-Total-Pages', Math.ceil(count['count(*)'] / limitPerPage));
 
         return response.json(incidents);
     },

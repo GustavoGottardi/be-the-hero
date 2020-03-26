@@ -20,8 +20,6 @@ export default function NewIncident() {
     async function handleNewIncident(e) {
         e.preventDefault();
 
-        console.log('Aqui');
-
         const data = {
             title,
             description,
